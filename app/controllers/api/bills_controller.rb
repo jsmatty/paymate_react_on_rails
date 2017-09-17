@@ -51,6 +51,6 @@ class Api::BillsController < ApplicationController
   private
 
   def bill_params
-    params.require(:bill).permit(:type, :company, :phone_number, :account_number, :name, :email)
+    params.require(:bill).permit(:utility, :company, :phone_number, :account_number, :name, :email)
   end
 end
