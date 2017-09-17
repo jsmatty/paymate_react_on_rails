@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170917055215) do
+ActiveRecord::Schema.define(version: 20170917172426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bills", force: :cascade do |t|
+    t.string "type"
+    t.string "company"
+    t.string "phone_number"
+    t.string "account_number"
+    t.string "name"
+    t.string "email"
+    t.bigint "house_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["house_id"], name: "index_bills_on_house_id"
+  end
 
   create_table "houses", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -33,5 +46,6 @@ ActiveRecord::Schema.define(version: 20170917055215) do
     t.index ["house_id"], name: "index_users_on_house_id"
   end
 
+  add_foreign_key "bills", "houses"
   add_foreign_key "users", "houses"
 end
