@@ -6,7 +6,7 @@ class Api::BillsController < ApplicationController
   end
   
   def show
-    @house = House.find(params[:house_id])
+    @house = House.find(params[:id])
     @bills = @house.bills.all
     
     render json: {
