@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import HouseCard from './HouseCard';
 
 
-class houseList extends Component {
+class HouseList extends Component {
 
   constructor(){
     super();

@@ -10,9 +10,9 @@ House.destroy_all
 User.destroy_all
 Bill.destroy_all
 
-house1 = House.create({house_nickname: "Gryffindor"})
-house2 = House.create({house_nickname: "Ravenclaw"})
-house3 = House.create({house_nickname: "Slytherin"})
+house1 = House.create({nickname: "Gryffindor"})
+house2 = House.create({nickname: "Ravenclaw"})
+house3 = House.create({nickname: "Slytherin"})
 
 user1 = User.create({house: house1, name: "Harry Potter", email: "potter.harry@hogwarts.com", password_digest: "stag", username: "ChosenOne", birthday: "July 31", bio: "Master of Death.", image: "https://i.imgur.com/escrDRM.jpg?1"})
 user2 = User.create({house: house1, name: "Neville Longbottom", email: "longbottom.neville@hogwarts.com", password_digest: "1234567", username: "ProfNev", birthday: "July 30", bio: "R.I.P Trevor Toad", image: "https://i.imgur.com/eNaPIgE.jpg?1"})

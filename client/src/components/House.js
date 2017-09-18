@@ -3,31 +3,32 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
 import AllBills from './AllBills';
+import AllUsers from './AllUsers';
 
 
 
 
-class house extends Component {
+class House extends Component {
 
   constructor(){
     super();
     this.state = {
-      house: {},
-      bills: []
+      bills: [],
+      users: []
     }
   }
 
   componentWillMount(){
-    this._fetchHouseAndBills();
+    this._fetchUsers[];
   }
 
-  _fetchHouseAndBills = async () => {
-    console.log("fetch house and bills success")
+  _fetchUsersAndBills = async () => {
+    console.log("fetch users and bills success")
     const id = this.props.match.params.id;
     const res = await axios.get(`/api/houses/${id}/bills`)
     console.log(res);
     this.setState({
-      house: res.data.house,
+      users: res.data.users,
       bills: res.data.bills
     })
   }
@@ -38,7 +39,7 @@ class house extends Component {
     return (
       
       <div >
-        <h4>{this.state.house.house_nickname}</h4>
+        <h4>{this.state.house.nickname}</h4>
         <p>Ello Mates!</p>
 
         <Link to={`/houses/${id}/bills`}>
@@ -52,4 +53,4 @@ class house extends Component {
   }
 }
 
-export default house;
+export default House;
