@@ -51,12 +51,12 @@ class Bill extends Component {
         </h2>
         <div>
           
-        <h2>Utility Type: {this.state.bill.utility}</h2>
-        <h4>Company: {this.state.bill.company}</h4>
-        <p>Company phone number: {this.state.bill.phone_number}</p><br/>
-        <h2>Account Number: {this.state.bill.account_number}</h2>
-        <h3>Name on account: {this.state.bill.name}</h3>
-        <p>Email on account: {this.state.bills.email}</p>
+        <h2>Utility Type: {this.state.utility}</h2>
+        <h4>Company: {this.state.company}</h4>
+        <p>Company phone number: {this.state.phone_number}</p><br/>
+        <h2>Account Number: {this.state.account_number}</h2>
+        <h3>Name on account: {this.state.name}</h3>
+        <p>Email on account: {this.state.email}</p>
         
         </div>
         <div>
