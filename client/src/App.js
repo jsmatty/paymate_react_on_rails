@@ -11,6 +11,10 @@ class App extends Component {
         <div>
           <GlobalNav />
            <Route exact path='/' component={SplashPage} />
+           
+           
+
+           <
         </div>
       </Router>
     )
