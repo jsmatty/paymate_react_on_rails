@@ -6,7 +6,7 @@ class SplashPage extends Component {
     render() {
         return (
                 <div>
-                <SplashPageContainer>
+                <div>
                 <br />
                 <br />
                 <br />
@@ -14,7 +14,7 @@ class SplashPage extends Component {
                 <h3> Pay/<strong>Mate</strong></h3>
                 <br />
                 <h2>Life can be complicated. Paying bills doesn't have to be.</h2>
-                </SplashPageContainer>
+                </div>
                 </div>
         );
     }

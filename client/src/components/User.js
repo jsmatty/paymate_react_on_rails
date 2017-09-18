@@ -27,7 +27,8 @@ class User extends Component {
       house: res.data.house,
       user: res.data.user
     })
-    // console.log(res.data)
+
+    // console.log(res.data)//
   }
 
   _deleteUser = async () => {
