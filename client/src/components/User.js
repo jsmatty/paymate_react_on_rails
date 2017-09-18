@@ -22,7 +22,7 @@ class User extends Component {
   _fetchUser = async () => {
     const houseId = this.props.match.params.houseId;
     const id = this.props.match.params.id;
-    const res = await axios.get(`/api/houses/${houseId}/users/${id}`)
+    const res = await axios.get(`/api/houses/${id}/users/${id}`)
     this.setState({
       house: res.data.house,
       user: res.data.user
@@ -34,13 +34,13 @@ class User extends Component {
   _deleteUser = async () => {
     const houseId = this.props.match.params.houseId;
     const id = this.props.match.params.id;
-    const res = await axios.delete(`/api/houses/${houseId}/users/${id}`)
+    const res = await axios.delete(`/api/houses/${id}/users/${id}`)
     const redirect = !this.state.redirect
     this.setState({ redirect })
   }
 
   render(){
-    const houseId = this.props.match.params.houseId;
+   // const houseId = this.props.match.params.houseId;
     const id = this.props.match.params.id;
 
 
@@ -59,11 +59,11 @@ class User extends Component {
         <h4>{this.state.user.birthday}</h4>
 
 
-        {this.state.user.house_id == this.state.house_id ?
+        {this.state.user.house_id === this.state.house_id ?
         <div>
-          <Link to={`/houses/${houseId}/users/${id}/edit`}>Edit Mate</Link>
+          <Link to={`/houses/${id}/users/${id}/edit`}>Edit Mate</Link>
           <button onClick={this._deleteUser}>Remove Mate</button>
-          {this.state.redirect && (<Redirect to={`/houses/${houseId}/users`}/>)}
+          {this.state.redirect && (<Redirect to={`/houses/${id}/users`}/>)}
         </div>
         :
         ''}

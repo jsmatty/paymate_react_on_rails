@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const UserCard = (props) => {
+  const id = props.houseId;
   const user = props.user;
+  
   return (
     
     <div>
       <div>
-        <Link to={`/houses/${house.id}/users/${user.id}`}>
+        <Link to={`/houses/${id}/users/${user.id}`}>
           <img src={user.image} alt="https://i.imgur.com/b8mlwg5.jpg?1"/>
         </Link>
       </div>
