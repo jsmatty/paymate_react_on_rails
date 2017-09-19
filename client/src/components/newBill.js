@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-class newBill extends Component {
+class NewBill extends Component {
   constructor(){
     super();
 
@@ -33,15 +33,27 @@ class newBill extends Component {
   handleSubmit(event){
     event.preventDefault();
     console.log(event);
-    const id = this.props.match.params.id;
+    const id = this.props.match.params.house_id;
+    console.log(id);
     axios.post(`/api/houses/${id}/bills`, {
       utility: this.state.utility,
       company: this.state.company,
       phone_number: this.state.phone_number,
       account_number: this.state.account_number,
       name: this.state.name,
-      email: this.state.email
+      email: this.state.email,
     })
+    // event.preventDefault();
+    // console.log(event);
+    // const id = this.props.match.params.id;
+    // axios.post(`/api/houses/${id}/bills`, {
+    //   utility: this.state.utility,
+    //   company: this.state.company,
+    //   phone_number: this.state.phone_number,
+    //   account_number: this.state.account_number,
+    //   name: this.state.name,
+    //   email: this.state.email
+    // })
     .catch((err) => {
       console.log(err);
     })
@@ -64,4 +76,4 @@ class newBill extends Component {
   }
 }
 
-export default newBill;
+export default NewBill;

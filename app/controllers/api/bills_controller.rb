@@ -18,7 +18,7 @@ class Api::BillsController < ApplicationController
   end
   
   def create
-    
+    @house = House.find(params[:house_id])
     @bill = Bill.create!(bill_params)
 
     if @bill.save

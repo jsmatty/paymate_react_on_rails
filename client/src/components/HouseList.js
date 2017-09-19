@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
-import HouseCard from './HouseCard';
+// import HouseCard from './HouseCard';
 import House2 from './House2';
 
 
