@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
 import AllBills from './AllBills';
@@ -9,52 +9,38 @@ import UserCard from './UserCard';
 import Bill from './Bill';
 import User from './User';
 
+
+
 class House extends Component {
   constructor(){
     super();
 
     this.state = {
-      errors: '',
       nickname: '',
       bills: [],
       users: []
     }
   }
 
+
   componentWillMount(){
-    this._fetchHouse;
-  //   console.log('this is props' + this.props.house.id);
-  //   console.log('this is props' + this.props.house.nickname);
-
-  //   const id = this.props.house.id;
-  //   const res =  axios.get(`/api/houses/${id}`).then((res) => {
-  //     const bills = res.data.bills;
-  //     const users = res.data.users;
-  //     // console.log(res.data);
-
-  //     this.setState({
-  //       nickname: res.data.house.nickname,
-  //       bills: bills,
-  //       users: users
-  //   })  
-  // })
-  // console.log(res);
-}
-
-  _fetchHouse = async() => {
-    try {
-      const id = this.props.house.id;
-      const res = await axios.get(`/api/houses/${id}`);
+    const id = this.props.match.params.id;
+    axios.get(`/api/houses/${id}`).then((res) => {
+      const bills = res.data.bills;
+      const users = res.data.users;
+    
+    this.setState({
+      nickname: res.data.house.nickname,
+      bills: bills,
+      users: users
+    })
       console.log(res);
-    } catch(err){
-      this.setState({error:err})
-    }
+    })
+    console.log('This is the House Id: ' + id );
   }
+  render() {
+        const id = this.props.match.params.id;
 
-
-
-  render(){
-    <p>test</p>
     const users = this.state.users.map((user, i) => (
       <div key={i}>
         <h2>Username: {user.username}</h2>
@@ -73,118 +59,32 @@ class House extends Component {
                   <h4>Account Number: {bill.account_number}</h4>
                   <h4>Name on account: {bill.name}</h4>
                   <h4>Email on account: {bill.email}</h4>
+                
+                <Link to={`/houses/${id}/bill/:id/edit`}>
+                <h4>Edit</h4>
+                </Link> 
+                <button _onClick={this._deleteBill}>Delete</button>
                 </div>
             ));
-    return(
+
+    return (
       <div>
         <h1>{this.state.nickname}</h1>
+        
+          
+          <Link to={`/houses/${id}/bill/new`}>
+            <h4>NEW BILL</h4>
+          </Link>
+          
+       
         <h2>{users}</h2>
         <h2>{bills}</h2>
-        
+
 
       </div>
-    )
+    );
   }
 }
 
-// class House extends Component {
-
-//   constructor(){
-//     super();
-//     this.state = {
-//       bills: [
-//         {}
-//         ],
-//       users: [
-//         {}
-//         ]
-//     }
-//   }
-
-//   componentWillMount(){
-//     this._fetchHouseAndBills();
-//     this._fetchHouseAndUsers();
-
-//   }
-
-//   _fetchHouseAndBills = async () => {
-//     try {
-//       console.log('this is _fetchHouseAndBills')
-//      const house_id = this.props.match.params.house_id;
-//          console.log(house_id);
-
-//      const id = this.props.match.params.id;
-//      const res = await axios.get(`/api/houses/${house_id}`);
-//      await this.setState({
-//        bills: res.data.bills,
-//       house: res.data.house_id
-//     });
-//      return res.data;
-//    }
-//    catch (err) {
-//      console.log(err)
-//       }
-//  }
-
-  // _fetchHouseAndUsers = async () => {
-  //   try {
-  //     const house_id = this.props.match.params.house_id;
-  //     const id = this.props.match.params.id;
-  //     const res = await axios.get(`/api/houses/${house_id}`);
-  //     await this.setState({
-  //       users: res.data.users,
-  //     house:res.data.house_id
-  //   });
-  //     return res.data;
-  //   }
-  //   catch (err) {
-  //     console.log(err)
-  //     }
-  //   }
-    
-
-//   render (){
-//      return (
-      
-//       <div>
-//         {/*<h4>{this.props.match.params.house_id}</h4>*/}
-
-//         <p>Ello Mates!</p>
-
-//           <div>
-//             <div>
-//               <div>
-//                 <h1> Utility Bills </h1>
-//                   {/*<Link to={`/houses/${house_id}/bills`}><button>Add New Bill</button></Link>*/}
-//                   {this.state.bills.map( (bills) => {
-//                     return (
-//                       <div>
-//                         {/*<BillCard key={bills.id} data={bills} />*/}
-//                         </div>
-//                     )
-//                   })}
-//                 </div>
-
-//                 <div>
-//                   <h1> Roomates </h1>
-//                   {/*<Link to={`/houses/${house_id}/users`}><button>Add New Mate</button></Link>*/}
-//                   {this.state.users.map( (user) => {
-//                     return (
-//                       <div>
-//                         <UserCard key={user.id} data={user} />
-//                         </div>
-//                     )
-//                   })}
-//           </div>
-
-//         </div>
-
-//     </div>
-
-//             </div>
-     
-//     )
-//   }
-// }
-
 export default House;
+

@@ -35,7 +35,7 @@ class EditBill extends Component {
     console.log(event);
     const id = this.props.match.params.house_id;
     console.log(id);
-    axios.post(`/api/houses/${id}/bills`, {
+    axios.put(`/api/houses/${id}/bills`, {
       utility: this.state.utility,
       company: this.state.company,
       phone_number: this.state.phone_number,
@@ -73,7 +73,7 @@ class EditBill extends Component {
         <label>Name on Account</label>
         <input type="text" name ="name" value={this.state.name} onChange={(e) => this.handleChange(e)} />
         <label>Email on Account</label>
-        <input type="text" name ="utility" value={this.state.utility} onChange={(e) => this.handleChange(e)} />
+        <input type="text" name ="email" value={this.state.email} onChange={(e) => this.handleChange(e)} />
         <input type="submit" value="submit" />
         </form>
         

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Nav = styled.div`
-font-family: 'Fjalla One', sans-serif;
+font-family: 'Quicksand', sans-serif;
   width: 95%;  
   display: flex;
   justify-content: space-between;

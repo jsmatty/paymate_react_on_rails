@@ -60,8 +60,8 @@ class Bill extends Component {
         </div>
         <div>
           <Link to={`/houses/${id}/bills/${id}`}><button onClick={this._editbill}>Edit</button></Link>
-          <button onClick={this._deletebill}>Delete</button>
-          {this.state.redirect && (<Redirect to={`/houses/${id}/bills`}/>)}
+          {/*<button onClick={this._deleteBill}>Delete</button>
+          {this.state.redirect && (<Redirect to={`/houses/${id}`}/>)}*/}
         </div>
       
       </div>

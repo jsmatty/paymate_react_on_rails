@@ -28,7 +28,7 @@ bill2 = Bill.create({house_id: house1.id, utility: "cable", company: "Hogwarts C
 bill3 = Bill.create({house_id: house1.id, utility: "power", company: "Hogwarts Power Co.", phone_number: "+44 1632 960235", account_number: "U3NZ1N8D", name: "Harry Potter", email: "potter.harry@hogwarts.com"})
 bill4 = Bill.create({house_id: house1.id, utility: "gas", company: "Hogwarts Gas Co.", phone_number: "+44 1632 960721", account_number: "EVURGNOJ", name: "Harry Potter", email: "potter.harry@hogwarts.com"})
 
-bill5 = Bill.create({house_id: house2.id, utility: "gas", company: "GB Gas Co.", phone_number: "+44 3069 990038", account_number: "L064U8Z4", name: "Luna Lovegood", email: "lovegood.luna@hogwarts.com"})
+bill5 = Bill.create({house_id: .id, utility: "gas", company: "GB Gas Co.", phone_number: "+44 3069 990038", account_number: "L064U8Z4", name: "Luna Lovegood", email: "lovegood.luna@hogwarts.com"})
 bill6 = Bill.create({house_id: house2.id, utility: "water", company: "GB Water Co.", phone_number: "+44 3069 990622", account_number: "VN9TMLBN", name: "Rowena Ravenclaw", email: "ravenclaw.rowena@hogwarts.com"})
 bill7 = Bill.create({house_id: house2.id, utility: "power", company: "GB Power Co.", phone_number: "+44 3069 990916", account_number: "KRY1A3HT", name: "Luna Lovegood", email: "lovegood.luna@hogwarts.com"})
 
