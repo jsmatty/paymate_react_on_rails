@@ -7,8 +7,9 @@ import AllBills from './components/AllBills';
 import User from './components/User';
 import House2 from './components/House2';
 import AllUsers from './components/AllUsers';
-import HouseList from './components/HouseList'
-import NewBill from './components/NewBill'
+import HouseList from './components/HouseList';
+import NewBill from './components/NewBill';
+import EditBill from './components/EditBill'
 
 
 import './App.css'
@@ -20,13 +21,14 @@ class App extends Component {
         <div>
           <GlobalNav />
            <Route exact path='/splashpage' component={SplashPage} />
-           {/*<Route exact path='/houses/:house_id/bills/:id' component={Bill} />*/}
+           <Route exact path='/houses/:house_id/bills/:id' component={Bill} />
            <Route exact path='/houses/:house_id/users/:id' component={User} />
            <Route exact path='/houses/:house_id/bills' component={AllBills} />
            <Route exact path='/houses/:id' component={House2} />
            <Route exact path='/houses/:house_id/users' component={AllUsers} />
            <Route exact path='/houses' component={HouseList} />
            <Route exact path='/houses/:house_id/bill/new' component= {NewBill} />
+           <Route exact path='/houses/:house_id/bill/edit' component= {EditBill} />
            
 
            

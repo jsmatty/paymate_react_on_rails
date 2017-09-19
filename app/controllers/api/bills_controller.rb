@@ -31,9 +31,13 @@ class Api::BillsController < ApplicationController
   end
   
   def update
-    @bill = Bill.find params[:id]
+    # @house = House.find(params[:house_id])
+    @bill = Bill.find(params[:bill_id])
+    @bill = Bill.update!(bill_params)
+    # @bill = Bill.find params[:id]
 
-    if @bill.update(bill_params)
+    # if @bill.update(bill_params)
+    if @bill.save
       render json: @bill
     else
       render json: {

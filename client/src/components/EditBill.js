@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-class NewBill extends Component {
+class EditBill extends Component {
   constructor(){
     super();
 
@@ -82,4 +82,4 @@ class NewBill extends Component {
   }
 }
 
-export default NewBill;
+export default EditBill;

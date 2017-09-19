@@ -30,7 +30,7 @@ class Bill extends Component {
     })
     // console.log(res.data)
   }
-  g
+  
   _deleteBill = async () => {
     const houseId = this.props.match.params.houseId;
     const id = this.props.match.params.id;
@@ -59,8 +59,8 @@ class Bill extends Component {
         
         </div>
         <div>
-          <Link to={`/houses/${id}/bills/${id}`}><button onClick={this._editbill}>Edit this Bill</button></Link>
-          <button onClick={this._deletebill}>Delete this Bill</button>
+          <Link to={`/houses/${id}/bills/${id}`}><button onClick={this._editbill}>Edit</button></Link>
+          <button onClick={this._deletebill}>Delete</button>
           {this.state.redirect && (<Redirect to={`/houses/${id}/bills`}/>)}
         </div>
       
