@@ -39,6 +39,8 @@ class House2 extends Component {
     console.log('This is the House Id: ' + id );
   }
   render() {
+        const id = this.props.match.params.id;
+
     const users = this.state.users.map((user, i) => (
       <div key={i}>
         <h2>Username: {user.username}</h2>
@@ -62,10 +64,16 @@ class House2 extends Component {
     return (
       <div>
         <h1>{this.state.nickname}</h1>
+        
+          
+          <Link to={`/houses/${id}/bill/new`}>
+            <h4>NEW BILL</h4>
+          </Link>
+       
         <h2>{users}</h2>
         <h2>{bills}</h2>
 
-        
+
       </div>
     );
   }

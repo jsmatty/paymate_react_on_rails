@@ -5,6 +5,8 @@ class Api::BillsController < ApplicationController
    render json: @bills
   end
   
+ 
+
   def show
     @house = House.find(params[:id])
     @bills = @house.bills.all
@@ -16,7 +18,8 @@ class Api::BillsController < ApplicationController
   end
   
   def create
-    @bill = Bill.new bill_params
+    
+    @bill = Bill.create!(bill_params)
 
     if @bill.save
       render json: @bill
@@ -51,6 +54,6 @@ class Api::BillsController < ApplicationController
   private
 
   def bill_params
-    params.require(:bill).permit(:utility, :company, :phone_number, :account_number, :name, :email)
+    params.permit(:utility, :company, :phone_number, :account_number, :name, :email, :house_id).merge(house_id: params[:house_id])
   end
 end
