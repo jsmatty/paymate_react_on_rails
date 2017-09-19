@@ -20,7 +20,7 @@ class App extends Component {
       <Router>
         <div>
           <GlobalNav />
-           <Route exact path='/splashpage' component={SplashPage} />
+           <Route exact path='/' component={SplashPage} />
            <Route exact path='/houses/:house_id/bills/:id' component={Bill} />
            <Route exact path='/houses/:house_id/users/:id' component={User} />
            <Route exact path='/houses/:house_id/bills' component={AllBills} />
