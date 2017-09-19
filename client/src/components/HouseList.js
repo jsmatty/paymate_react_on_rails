@@ -44,7 +44,9 @@ class HouseList extends Component {
     return (
       <div>
         <h1>{houses}</h1>
-        <House house={this.props.houses}/>
+        {this.state.houses.map((house)=> (
+         <House key={house.id} house={house}/>
+        ))}
         </div>
   //     <div>      
   //       <h5>HouseHolds</h5>

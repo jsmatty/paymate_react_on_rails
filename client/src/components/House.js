@@ -21,7 +21,8 @@ class House extends Component {
   }
 
   componentWillMount(){
-    axios.get(`/api/houses/40`).then((res) => {
+    const id = this.props.match.params.id;
+    axios.get(`/api/houses/${id}`).then((res) => {
       const bills = res.data.bills;
       const users = res.data.users;
       console.log(res.data);
