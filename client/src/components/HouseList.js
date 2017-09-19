@@ -30,6 +30,8 @@ class HouseList extends Component {
     }
   }
 
+ 
+
   render() {
     // const houses = this.state.houses.map((house, i) => (
     //   <div key = {i}>

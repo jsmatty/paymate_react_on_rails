@@ -38,6 +38,18 @@ class House extends Component {
     })
     console.log('This is the House Id: ' + id );
   }
+
+  _deleteBill = async () => {
+    console.log(this.props)
+    const id = this.props.match.params.id;
+    const billId = this.props.match.params.bill.id;
+    console.log('This is the delete function!' + billId);
+
+    const res = await axios.delete(`/api/houses/${id}/bills/${billId}`)
+    const redirect = !this.state.redirect
+    this.setState({ redirect })
+  }
+
   render() {
         const id = this.props.match.params.id;
 
@@ -59,11 +71,11 @@ class House extends Component {
                   <h4>Account Number: {bill.account_number}</h4>
                   <h4>Name on account: {bill.name}</h4>
                   <h4>Email on account: {bill.email}</h4>
-                
+                  {bill.id}
                 <Link to={`/houses/${id}/bill/:id/edit`}>
                 <h4>Edit</h4>
                 </Link> 
-                <button _onClick={this._deleteBill}>Delete</button>
+                <button onClick={this._deleteBill}>Delete</button>
                 </div>
             ));
 

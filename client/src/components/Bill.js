@@ -14,12 +14,20 @@ class Bill extends Component {
       bills: []
       
     }
+
+        this._deleteBill = this._deleteBill.bind(this);
+
   }
 
   componentWillMount(){
     this._fetchBill();
   }
 
+  deleteBill(){
+    console.log('delete');
+  }
+
+  
   _fetchBill = async () => {
     const houseId = this.props.match.params.houseId;
     const id = this.props.match.params.id;
@@ -31,13 +39,14 @@ class Bill extends Component {
     // console.log(res.data)
   }
   
-  _deleteBill = async () => {
-    const houseId = this.props.match.params.houseId;
-    const id = this.props.match.params.id;
-    const res = await axios.delete(`/api/houses/${id}/bills/${id}`)
-    const redirect = !this.state.redirect
-    this.setState({ redirect })
-  }
+  // _deleteBill = async () => {
+  //   console.log('This is the delete function!');
+  //   const houseId = this.props.match.params.houseId;
+  //   const id = this.props.match.params.id;
+  //   const res = await axios.delete(`/api/houses/${id}/bills/${id}`)
+  //   const redirect = !this.state.redirect
+  //   this.setState({ redirect })
+  // }
 
   render(){
     const houseId = this.props.match.params.houseId;
@@ -60,8 +69,8 @@ class Bill extends Component {
         </div>
         <div>
           <Link to={`/houses/${id}/bills/${id}`}><button onClick={this._editbill}>Edit</button></Link>
-          {/*<button onClick={this._deleteBill}>Delete</button>
-          {this.state.redirect && (<Redirect to={`/houses/${id}`}/>)}*/}
+          
+          {this.state.redirect && (<Redirect to={`/houses/${id}`}/>)}
         </div>
       
       </div>

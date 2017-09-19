@@ -48,7 +48,7 @@ class Api::BillsController < ApplicationController
   
   def destroy
     @bill = Bill.find(params[:id])
-    @bill.destroy!(bill_params)
+    @bill.destroy!
 
     render json: {
       message: 'Bill successfully destroyed'
