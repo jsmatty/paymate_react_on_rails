@@ -14,6 +14,7 @@ class House extends Component {
     super();
 
     this.state = {
+      errors: '',
       nickname: '',
       bills: [],
       users: []
@@ -21,21 +22,39 @@ class House extends Component {
   }
 
   componentWillMount(){
-    const id = this.props.match.params.id;
-    axios.get(`/api/houses/${id}`).then((res) => {
-      const bills = res.data.bills;
-      const users = res.data.users;
-      console.log(res.data);
+    this._fetchHouse;
+  //   console.log('this is props' + this.props.house.id);
+  //   console.log('this is props' + this.props.house.nickname);
 
-      this.setState({
-        nickname: res.data.house.nickname,
-        bills: bills,
-        users: users
-    })  
-  })
+  //   const id = this.props.house.id;
+  //   const res =  axios.get(`/api/houses/${id}`).then((res) => {
+  //     const bills = res.data.bills;
+  //     const users = res.data.users;
+  //     // console.log(res.data);
+
+  //     this.setState({
+  //       nickname: res.data.house.nickname,
+  //       bills: bills,
+  //       users: users
+  //   })  
+  // })
+  // console.log(res);
 }
 
+  _fetchHouse = async() => {
+    try {
+      const id = this.props.house.id;
+      const res = await axios.get(`/api/houses/${id}`);
+      console.log(res);
+    } catch(err){
+      this.setState({error:err})
+    }
+  }
+
+
+
   render(){
+    <p>test</p>
     const users = this.state.users.map((user, i) => (
       <div key={i}>
         <h2>Username: {user.username}</h2>
@@ -107,21 +126,21 @@ class House extends Component {
 //       }
 //  }
 
-//   _fetchHouseAndUsers = async () => {
-//     try {
-//       const house_id = this.props.match.params.house_id;
-//       const id = this.props.match.params.id;
-//       const res = await axios.get(`/api/houses/${house_id}`);
-//       await this.setState({
-//         users: res.data.users,
-//       house:res.data.house_id
-//     });
-//       return res.data;
-//     }
-//     catch (err) {
-//       console.log(err)
-//       }
-//     }
+  // _fetchHouseAndUsers = async () => {
+  //   try {
+  //     const house_id = this.props.match.params.house_id;
+  //     const id = this.props.match.params.id;
+  //     const res = await axios.get(`/api/houses/${house_id}`);
+  //     await this.setState({
+  //       users: res.data.users,
+  //     house:res.data.house_id
+  //   });
+  //     return res.data;
+  //   }
+  //   catch (err) {
+  //     console.log(err)
+  //     }
+  //   }
     
 
 //   render (){

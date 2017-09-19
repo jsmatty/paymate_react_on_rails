@@ -18,7 +18,7 @@ user1 = User.create({house_id: house1.id, name: "Harry Potter", email: "potter.h
 user2 = User.create({house_id: house1.id, name: "Neville Longbottom", email: "longbottom.neville@hogwarts.com", password_digest: "1234567", username: "ProfNev", birthday: "July 30", bio: "R.I.P Trevor Toad", image: "https://i.imgur.com/eNaPIgE.jpg?1"})
 
 user3 = User.create({house_id: house2.id, name: "Luna Lovegood", email: "lovegood.luna@hogwarts.com", password_digest: "hare", username: "LoonyLuna", birthday: "February 13", bio: "M.a.g.i.z.o.ologist", image: "https://i.imgur.com/ZzwPfT7.jpg?1"})
-user4 = User.create({house_id: house2.id, name: "Rowena Ravenclaw", email: "ravenclaw.rowena@hogwarts.com", password_digest: "scotland", username: "FairRavie", birthday: "", bio: "I founded. I died.", image: "https://i.imgur.com/HqCxmMS.jpg?1"})
+user4 = User.create({house_id: house2.id, name: "Rowena Ravenclaw", email: "ravenclaw.rowena@hogwarts.com", password_digest: "scotland", username: "FairRavie", birthday: "October 29", bio: "I founded. I died.", image: "https://i.imgur.com/HqCxmMS.jpg?1"})
 
 user5 = User.create({house_id: house3.id, name: "Tom Riddle", email: "riddle.tom@hogwarts.com", password_digest: "voldy", username: "MouldyVoldy", birthday: "May 2", bio: "Death Eaterz 4 lyfe.", image: "https://i.imgur.com/vMHQr3N.jpg?1"})
 user6 = User.create({house_id: house3.id, name: "Severus Snape", email: "severus.snape@hogwarts.com", password_digest: "doedoe", username: "OlSev", birthday: "November 2", bio: "My birthday is actually May 2nd but, Tom copied me.", image: "https://i.imgur.com/wYb5XjI.jpg?1"})
