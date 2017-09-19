@@ -10,9 +10,9 @@ const UserCard = (props) => {
     
     <div>
       <div>
-        <Link to={`/houses/${id}/users/${user.id}`}>
+        {/*<Link to={`/houses/${id}/users/${user.id}`}>
           <img src={user.image} alt="https://i.imgur.com/b8mlwg5.jpg?1"/>
-        </Link>
+        </Link>*/}
       </div>
     </div>
   

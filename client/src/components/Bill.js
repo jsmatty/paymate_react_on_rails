@@ -47,7 +47,7 @@ class Bill extends Component {
     return (
       <div>
         <h2>
-          <Link to={`/houses/${id}/bills`}>{this.state.house.house_nickname}</Link>
+          <Link to={`/houses/${id}/bills`}>{this.state.house.nickname}</Link>
         </h2>
         <div>
           
@@ -60,7 +60,7 @@ class Bill extends Component {
         
         </div>
         <div>
-          <Link to={`/houses/${id}/bills/${id}`}>Edit Bill Information</Link>
+          <Link to={`/houses/${id}/bills/${id}`}><button onClick={this._editbill}>Edit this Bill</button></Link>
           <button onClick={this._deletebill}>Delete this Bill</button>
           {this.state.redirect && (<Redirect to={`/houses/${id}/bills`}/>)}
         </div>
